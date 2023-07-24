@@ -42,7 +42,7 @@ let objOFD = [
     },
     {
         name: 'РТТ Шахты Майская 12',
-        regNumber: '',
+        regNumber: '123',
     }
 ];
 /*
@@ -130,7 +130,7 @@ for (let i = 0; i < objFullName.length; i++) {
             if (document.querySelector(`#num_container-${i}`).children[1].textContent === document.querySelector(`#num_container-${i}`).children[3].textContent) {
                 document.querySelector(`#num_container-${i}`).style.border = '5px solid green';
             } else {
-                document.querySelector(`#num_container-${i}`).style.border = '5px solid red';
+                document.querySelector(`#num_container-${i}`).style.border = '5px solid darkviolet';
             };
         }
     };
@@ -142,7 +142,7 @@ let kkm = document.querySelectorAll('.strComparison');
 // Проходим по каждому div из переменной kkm  и вешаем событие change
 for (let i = 0; i < objOFD.length; i++) {
     kkm[i].addEventListener('change', (e) => {
-
+      
         // через перебор массива будем подставлять необходимые рег.номера
         objOFD.forEach((item) => {
             if (document.querySelector(`#num_container-${i}`).children[3] === undefined && item.name === e.target.value) {
@@ -155,11 +155,15 @@ for (let i = 0; i < objOFD.length; i++) {
         // подсвечиваем границы 
         if (document.querySelector(`#num_container-${i}`).children[2].firstElementChild.selected === true) {
             document.querySelector(`#num_container-${i}`).style.border = '0.5px solid black';
+            document.querySelector(`#num_container-${i}`).style.borderRight = '5px solid transparent';
+            document.querySelector(`#num_container-${i}`).style.borderLeft = '5px solid transparent';
             document.querySelector(`#num_container-${i}`).children[3].textContent = '';
         } else if (document.querySelector(`#num_container-${i}`).children[1].textContent === document.querySelector(`#num_container-${i}`).children[3].textContent) {
             document.querySelector(`#num_container-${i}`).style.border = '5px solid green';
-        } else {
+        } else if (!document.querySelector(`#C1_KKM-${i}`).textContent.includes(e.target.value.slice(4))) {
             document.querySelector(`#num_container-${i}`).style.border = '5px solid red';
+        } else {
+            document.querySelector(`#num_container-${i}`).style.border = '5px solid darkviolet';
         }
     });
 }
