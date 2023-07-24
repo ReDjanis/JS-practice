@@ -1,0 +1,95 @@
+@import url("./reset.css");
+
+* {
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    max-width: 1920px;
+    width: 100%;
+    margin: 100px auto;
+    border: 1px solid black;
+    height: auto;
+    font-size: 30px;
+}
+
+/*
+.container {
+    width: 100%;
+    display: flex;
+    min-height: 60px;
+    border: 0.5px solid black;
+}
+
+.str {
+    flex: 0 1 35%;
+    border-right: 0.5px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.str-number {
+    flex: 0 1 15%;
+    border-right: 0.5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.strComparison {
+    flex: 0 1 35%;
+    border-right: 0.5px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.strComparison-number {
+    flex: 0 1 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*/
+
+.wrapper {}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(200px, 35%) minmax(250px, 15%) minmax(200px, 35%) minmax(250px, 15%);
+    grid-template-rows: minmax(60px, 1fr);
+    align-items: center;
+    justify-items: center;
+    border: 0.5px solid black;
+}
+
+.str {
+    border-right: 0.5px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+.str-number {
+    width: 100%;
+    height: 100%;
+    border-right: 0.5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strComparison {
+    width: 100%;
+    height: 100%;
+    border-right: 0.5px solid black;
+}
+
+.strComparison-number {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
