@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+
+    <form name="mainForm" action="" class="form">
+
+        <h1>Форма запроса</h1>
+
+        <div class="wrapper">
+            <label class="form__item">
+                <div class="form__name">
+                    Введите имя
+                </div>
+                
+                <input type="text" class="form__input" required>
+            </label>
+            <label class="form__item">
+                <div class="form__name">
+                    Введите email
+                </div>
+               
+                <input type="text" class="form__input" required>
+            </label>
+            <label class="form__item">
+                <div class="form__name">
+                    Возраст
+                </div>
+                
+                <input type="number" class="form__input" required>
+            </label>
+            <label class="form__item">
+                <div class="form__name">
+                    Пол
+                </div>
+               
+                <div>
+                    <label>
+                        <input type="radio" required>
+                        Мужской
+                    </label>
+
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" required>
+                        Женский
+                    </label>
+
+                </div>
+
+            </label>
+
+           
+            <label class="form__item">
+                <div class="form__name">
+                    Профессия
+                </div>
+               
+                <select name="profession" id="" class="form__input">
+                    <option value="engineer">Инженер</option>
+                    <option value="manager">Менеджер</option>
+                    <option value="scientist">Ученый</option>
+                    <option value="lawyer">Юрист</option>
+                    <option value="other">Другое</option>
+                </select>
+            </label>
+
+            <label class="form__item">
+                <div class="form__name">
+                    Фото:
+                </div>
+                
+                <input type="file" accept="image/jpeg" name="photo" required>
+            </label>
+
+            <div class="form__consent">
+
+                <input type="checkbox" id="check1">
+                <label for="check1">
+                    <span>Согласен на обработку персональных данных в соответствии с
+                        <a href="" class="form__doc">
+                            политикой конфиденциальности
+                        </a>
+                    </span>
+                </label>
+    
+            </div>
+        </div>
+
+        
+
+
+    </form>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
