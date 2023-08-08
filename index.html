@@ -7,55 +7,205 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
+    <dialog class="modal">
+        <div class="modal__wrapper">
+            <div class="modal__text"></div>
+            <button class="modal__btn">Ок</button>
+        </div>
+    </dialog>
 
-    <form name="mainForm" action="" class="form">
+    <form name="form_login" action="" class="form form-login">
 
-        <h1>Форма запроса</h1>
+        <div class="navigation">
+
+            <button class="navigation__btn">
+                Зарегистрироваться
+            </button>
+
+        </div>
+
+        <h1>Форма входа</h1>
 
         <div class="wrapper">
+
             <label class="form__item">
+
                 <div class="form__name">
-                    Введите имя
+                    Введите email *
                 </div>
-                
-                <input type="text" class="form__input" required>
+
+                <input type="text" class="form__input" name="emailLogin">
             </label>
-            <label class="form__item">
-                <div class="form__name">
-                    Введите email
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="emailLogin">
+                    обязательно для заполнения
                 </div>
-               
-                <input type="text" class="form__input" required>
+
+            </div>
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Введите пароль *
+                </div>
+
+                <input type="password" class="form__input" name="passwordLogin">
             </label>
-            <label class="form__item">
-                <div class="form__name">
-                    Возраст
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="passwordLogin">
+                    обязательно для заполнения
                 </div>
-                
-                <input type="number" class="form__input" required>
+
+            </div>
+
+        </div>
+
+        <div class="form__submit">
+
+            <button class="form__submit-btn" id="btn-login">
+                Авторизоваться
+            </button>
+
+        </div>
+
+    </form>
+
+    <form name="form_registration" action="" class="form form-registration">
+
+        <div class="navigation">
+
+            <button class="navigation__btn">
+                Войти
+            </button>
+
+        </div>
+
+        <h1>Форма регистрации</h1>
+
+        <div class="wrapper">
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Введите имя *
+                </div>
+
+                <input type="text" class="form__input" name="nameUser">
+
             </label>
-            <label class="form__item">
-                <div class="form__name">
-                    Пол
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="nameUser">
+                    обязательно для заполнения
                 </div>
-               
+
+            </div>
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Введите пароль *
+                </div>
+
+                <input type="password" class="form__input" name="password">
+            </label>
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="password">
+                    обязательно для заполнения
+                </div>
+
+            </div>
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Повторите пароль *
+                </div>
+
+                <input type="password" class="form__input" name="passwordCheck">
+            </label>
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="passwordCheck">
+                    обязательно для заполнения
+                </div>
+
+            </div>
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Введите email *
+                </div>
+
+                <input type="text" class="form__input" name="email">
+            </label>
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="email">
+                    обязательно для заполнения
+                </div>
+
+            </div>
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Возраст *
+                </div>
+
+                <input type="number" min="7" max="90" step="1" class="form__input" name="age">
+            </label>
+
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="age">
+                    обязательно для заполнения
+                </div>
+
+            </div>
+
+            <label class="form__item">
+
+                <div class="form__name">
+                    Пол *
+                </div>
+
                 <div>
-                    <label>
-                        <input type="radio" required>
+                    <label class="form__item_cursor">
+                        <input type="radio" name="gender" value="male">
                         Мужской
                     </label>
 
                 </div>
 
                 <div>
-                    <label>
-                        <input type="radio" required>
+                    <label class="form__item_cursor">
+                        <input type="radio" name="gender" value="female">
                         Женский
                     </label>
 
@@ -63,45 +213,78 @@
 
             </label>
 
-           
+            <div class="form__text">
+
+                <div class="form__text-empty"></div>
+                <div class="form__text-message" data-group="gender">
+                    обязательно для заполнения
+                </div>
+
+            </div>
+
+
             <label class="form__item">
+
                 <div class="form__name">
                     Профессия
                 </div>
-               
-                <select name="profession" id="" class="form__input">
+
+                <select name="profession" class="form__input form__item_cursor">
+                    <option value="not_selected" selected>Не выбрано</option>
                     <option value="engineer">Инженер</option>
                     <option value="manager">Менеджер</option>
                     <option value="scientist">Ученый</option>
                     <option value="lawyer">Юрист</option>
                     <option value="other">Другое</option>
                 </select>
+
             </label>
 
-            <label class="form__item">
+            <label class="form__item form__item-photo">
+
                 <div class="form__name">
                     Фото:
                 </div>
-                
-                <input type="file" accept="image/jpeg" name="photo" required>
+
+                <input type="file" accept="image/jpeg" name="photo" class="form__input-photo">
+                <img src="./images/icon-photo.svg" alt="фотоаппарат" class="form__input-img">
+                <div class='form__input-selectFile'>
+                    <img src="" alt="" id="imgFile">
+                    <!-- <button class="form__input-btnDel"> -->
+                    <img src="./images/icon-btnDel.svg" alt="иконка крестик в круге" class="form__input-btnDel">
+                    <!-- </button> -->
+                </div>
+
             </label>
 
-            <div class="form__consent">
+            <label class="form__item form__check">
 
-                <input type="checkbox" id="check1">
-                <label for="check1">
-                    <span>Согласен на обработку персональных данных в соответствии с
-                        <a href="" class="form__doc">
-                            политикой конфиденциальности
-                        </a>
-                    </span>
-                </label>
-    
-            </div>
+                <input type="checkbox" class="form__check-input" name="checkbox">
+                <span class="form__check-vector"></span>
+
+                <span class="form__doc">Согласен на обработку персональных данных в соответствии с
+                    <a href="" class="form__doc">
+                        политикой конфиденциальности
+                    </a>
+
+                </span>
+
+
+            </label>
+
+            <p class="form__text-message" data-group="checkbox">
+                обязательно для заполнения
+            </p>
+
         </div>
 
-        
+        <div class="form__submit">
 
+            <button class="form__submit-btn" id="btn-registration">
+                Зарегистрироваться
+            </button>
+
+        </div>
 
     </form>
 
