@@ -13,7 +13,13 @@ body {
     background-color: #292929;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: minmax(20px, 1fr) minmax(300px, 960px) minmax(20px, 1fr);
+}
+
 .form {
+    grid-column: 2/3;
     max-width: 960px;
     width: 100%;
     height: auto;
@@ -46,16 +52,17 @@ body {
     line-height: 20px;
 }
 
-h1 {
+h2 {
     width: 100%;
     color: #ffff;
     font-size: 55px;
+    line-height: 55px;
     font-weight: 700;
     text-align: center;
     padding: 0px 0px 80px 0px;
 }
 
-.wrapper {
+.form__wrapper {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -71,6 +78,11 @@ h1 {
     display: flex;
     column-gap: 20px;
     align-items: center;
+}
+
+.form__item-wrapper {
+    display: flex;
+    column-gap: 20px;
 }
 
 .form__item_cursor {
@@ -156,6 +168,8 @@ h1 {
     margin-top: 27px;
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: flex-start;
 }
 
 .form__doc {
@@ -181,14 +195,14 @@ h1 {
     cursor: pointer;
     margin-right: 10px;
     height: 25px;
-    width: 35px;
+    min-width: 25px;
 }
 
 .form__check-input:checked+.form__check-vector:after {
     content: url("../images/Vector.png");
     position: absolute;
-    top: 5px;
-    left: 3px;
+    top: 0px;
+    left: 2px;
 }
 
 .form__submit {
@@ -236,6 +250,11 @@ p {
     align-items: center;
 }
 
+.modal__text {
+    line-height: 30px;
+    text-align: center;
+}
+
 .modal__btn {
     width: 300px;
     padding: 20px 0px;
@@ -245,4 +264,65 @@ p {
     background-color: #292929;
     color: #ffff;
     cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+    .form__wrapper {
+        padding: 0px 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        padding: 0px 10px 80px 10px;
+    }
+
+    .form__input-img {
+        left: 33%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form__name {
+        font-size: calc((100vw - 380px) / 120 * 4 + 20px);
+    }
+
+    .form__text-message {
+        font-size: calc((100vw - 380px) / 120 * 2 + 14px);
+    }
+
+    .form__item-wrapper {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .form__item_cursor {
+        font-size: calc((100vw - 380px) / 120 * 2 + 22px);
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .navigation {
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    h2 {
+        font-size: calc((100vw - 380px) / 90 * 10 + 45px);
+    }
+
+    .form__input-img {
+        left: 34%;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .form__submit {
+        padding: 0px 15px;
+    }
+
+    .form__submit-btn {
+        font-size: calc((100vw - 380px) / 45 * 5 + 25px);
+    }
 }

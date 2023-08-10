@@ -320,8 +320,13 @@ btnLogin.addEventListener('click', function () {
                 if (key[3][1] === arrElementsFormLogin[0].value && key[1][1] === arrElementsFormLogin[1].value) {
 
                     modalWindow.style.display = 'flex';
-                    modalText.textContent = 'Вы успешно вошли!';
+                    // modalText.textContent = 'Вы успешно вошли!';
+                    modalText.innerHTML = 'Вы успешно вошли!</br>Переадресация через <span class="modal__timer"></span> сек';
+                    let fiveSeconds = 5,
+                        display = document.querySelector('.modal__timer');
+                    
                     modalWindow.showModal();
+                    startTimer(fiveSeconds, display);
                     modalBtn.style.display = 'none';
                     userRegistered = true;
                     cleaningInputs(arrElementsFormLogin);
@@ -329,13 +334,13 @@ btnLogin.addEventListener('click', function () {
                     break;
                 }
             }
-        
+
             if (!userRegistered) {
 
                 modalWindow.style.display = 'flex';
                 modalText.textContent = 'Email или пароль введены неверно';
                 modalWindow.showModal();
-              
+
             }
         }
     }
@@ -378,11 +383,37 @@ function closeOnBackDropClickOrBtn({ currentTarget, target }) {
     const isClickedOnButton = target === modalBtn;
 
     if (isClickedOnBackDrop || isClickedOnButton) {
-      modalWindow.style.display = 'none';
-      modalText.textContent = '';
-      modalWindow.close();
+        modalWindow.style.display = 'none';
+        modalText.textContent = '';
+        modalWindow.close();
     }
-  }
+}
+
+function startTimer(duration, display) {
+   
+    let start = Date.now(),
+        diff,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        seconds = (diff % 60) | 0;
+
+        display.textContent = seconds; 
+
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    setInterval(timer, 1000);
+}
 
 
 
