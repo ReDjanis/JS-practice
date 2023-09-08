@@ -330,7 +330,7 @@ btnLogin.addEventListener('click', function () {
                     modalBtn.style.display = 'none';
                     userRegistered = true;
                     cleaningInputs(arrElementsFormLogin);
-                    setTimeout(redirect, 5000);
+                    setTimeout(redirect, 4900);
                     break;
                 }
             }
